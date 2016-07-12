@@ -16,11 +16,12 @@ namespace dotnet_example
                 .AddCommandLine(args)
                 .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
-            
+
             var host = new WebHostBuilder()
                 .UseConfiguration(config)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseUrls("http://0.0.0.0:5000")
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
