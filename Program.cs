@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
@@ -22,7 +19,6 @@ namespace dotnet_example
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseUrls("http://0.0.0.0:5000")
-                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
 
